@@ -23,16 +23,20 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div className="">
       <h1>CrytoCurrency App</h1>
-
-      {
+      <div className='App'>
+        {
         crytoData && crytoData.map((data) =>{
           return(
             <CrytoList key={data.id} data = {data} />
           )
         })
       }
+
+      </div>
+
+      
 
 
 

@@ -3,3 +3,24 @@ body{
   padding: 0;
   text-align: center;
 }
+
+.App{
+  display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  
+  
+}
+
+.cryto{
+ 
+  border: 0px solid red;
+  margin-bottom: 2rem;
+  width: 250px;
+}
+
+/* .cryto__list{
+  border: 1px solid red;
+  width: 210px;
+  margin-bottom: 2rem;
+
+} */
