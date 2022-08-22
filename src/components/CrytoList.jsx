@@ -1,15 +1,25 @@
 import React from 'react'
+import { CrytoCard } from './CrytoCard'
 
-export const CrytoList = ({data}) => {
-    // console.log(data)
+export const CrytoList = ({crytoData}) => {
+    console.log(crytoData)
   return (
-    <div className='cryto'>
-        <div className='cryto__list'>
-            <img src={data.image} alt="" />
-            <p><span className='name'>{data.name}</span></p>
-            <p><span className='symbol'><strong>{data.symbol}</strong></span></p>
-            <p><span className='price'>${data.current_price}</span></p>
-        </div>
+    <div className='cryto_list'>
+      {
+        crytoData && crytoData.map((data) => {
+          return(
+            <CrytoCard
+            image = {data.image}
+            symbols ={data.symbol}
+            price = {data.current_price}
+             />
+          )
+        })
+
+      }
+       
+         
+       
     </div>
   )
 }

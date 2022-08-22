@@ -32,37 +32,18 @@ function App() {
   }, [])
 
   return (
-    <div className="">
-      <h1>CrytoCurrency App</h1>
-      <div className='App'>
-        {
-        currentPost && currentPost.map((data) =>{
-          return(
-            <CrytoList
-             key={data.id} data = {data}
-             
-             />
-          )
-        })
-      }
-
-      <Pagination
+    
+      
+      <div className=''>
+        <h1>CrytoCurrency App</h1>
+        <CrytoList crytoData = {currentPost} />
+        <Pagination
       totalPost = {crytoData.length}
      postsPerPage = {postsPerPage}
      setCurrentPage = {setCurrentPage}
       
       />
-
       </div>
-
-      
-
-      
-
-
-
-
-    </div>
   )
 }
 

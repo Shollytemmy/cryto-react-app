@@ -9,14 +9,13 @@ body{
   font-family: 'Poppins';
 }
 
-.App{
+.cryto_list{
   display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* gap: 25px; */
   place-items: center;
   
-  
 }
+
 
 h1{
   color: #fff;
@@ -38,7 +37,7 @@ img{
  
 }
 
-.cryto__list{
+.cryto_card{
   border: 0px solid green;
   width: 200px;
     /* height: 200px; */
@@ -51,7 +50,7 @@ margin-bottom: 25px;
 
 }
 
-.cryto__list:hover{
+.cryto_card:hover{
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -59,24 +58,26 @@ margin-bottom: 25px;
 .name{
   font-size: 18px;
 }
-
-.symbol {
-  font-size: 25px;
+.price{
+  color:red;
+  font-weight: 300;
+  font-size: 20px;
 }
 
-.price {
-  font-size: 18px;
-  color: red;
+.symbol {
+  font-size: 20px;
+  font-weight: 300;
 }
 
 /*Pagination*/
 
-.pagination {
+ .pagination{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 1rem auto;
-}
+  width: 30%;
+  margin: 0 auto;
+ 
+} 
 
 .pagination button {
   width: 40px;
