@@ -1,10 +1,19 @@
 import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
+
 import './App.css'
 import { CrytoList } from './components/CrytoList'
+import { Pagination } from './components/Pagination'
 
 function App() {
   const [crytoData, setCrytoData] = useState([])
+  const [postsPerPage, setPostsPerPage] = useState(8)
+  const [currentPage, setCurrentPage] = useState(1)
+
+
+  const lastPostsIdx = currentPage * postsPerPage
+  const firstPostIdx = lastPostsIdx - postsPerPage
+  const currentPost = crytoData.slice(firstPostIdx, lastPostsIdx)
   // console.log(crytoData)
 
   const fetchCoin = () =>{
@@ -27,14 +36,26 @@ function App() {
       <h1>CrytoCurrency App</h1>
       <div className='App'>
         {
-        crytoData && crytoData.map((data) =>{
+        currentPost && currentPost.map((data) =>{
           return(
-            <CrytoList key={data.id} data = {data} />
+            <CrytoList
+             key={data.id} data = {data}
+             
+             />
           )
         })
       }
 
+      <Pagination
+      totalPost = {crytoData.length}
+     postsPerPage = {postsPerPage}
+     setCurrentPage = {setCurrentPage}
+      
+      />
+
       </div>
+
+      
 
       
 
